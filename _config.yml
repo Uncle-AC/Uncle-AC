@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 'My blog'
+title: 'Uncle_ac blog'
 subtitle: 'Enrich--every day'
 description: '加油哦'
 keywords:
@@ -13,7 +13,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: /
+url: http://www.fezhu.top
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -35,7 +35,7 @@ titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 highlight: 
@@ -78,22 +78,17 @@ theme: Sakura
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
-  repo: git@github.com:uncleacc/uncleacc.github.io.git
-    # github: git@github.com:honjun/honjun.github.io.git
-    # github: https://github.com/honjun/honjun.github.io.git
-    # coding: https://git.coding.net/hojun/hojun.git
-  branch: master
-
+  - type: git
+    repo:
+      github: git@github.com:uncleacc/uncleacc.github.io.git
+      coding: git@e.coding.net:uncleacc/uncleacc.git
+    branch: master
+  - type: baidu_url_submitter
 backup:
-  type: git
-  message: backup my blog of https://uncleacc.github.io/
-  repository:
-    # 你的github仓库地址,备份分支名  （建议新建backup分支）
-    github: https://github.com/uncleacc/uncleacc.github.io.git,backup
-    # coding: https://git.coding.net/hojun/hojun.git,backup
-
-#RSS
+    type: git
+    repository:
+       github: git@github.com:uncleacc/uncleacc.github.io.git,backup
+      #  gitcafe: git@github.com:xxx/xxx.git,branchName
 feed:
   type: atom
   path: atom.xml
@@ -103,3 +98,65 @@ feed:
   content_limit: 140
   content_limit_delim: ' '
   order_by: -date
+## markdown 渲染引擎配置，默认是hexo-renderer-marked，这个插件渲染速度更快，且有新特性
+markdown:
+  render:
+    html: true
+    xhtmlOut: false
+    breaks: true
+    linkify: true
+    typographer: true
+    quotes: '“”‘’'
+  plugins:
+    - markdown-it-footnote
+    - markdown-it-sup
+    - markdown-it-sub
+    - markdown-it-abbr
+    - markdown-it-emoji
+  anchors:
+    level: 2
+    collisionSuffix: 'v'
+    permalink: true
+    permalinkClass: header-anchor
+    permalinkSymbol: ¶
+
+# 百度链接自动提交
+baidu_url_submit:
+  count: 6 # 提交最新的链接数量
+  host: http://www.fezhu.top # 在百度站长平台中注册的域名
+  token: BkbvhlzSH6Dx2DSg # 请注意这是您的秘钥， 所以请不要把博客源代码发布在公众仓库里!
+  path: baidu_urls.txt # 文本文档的地址， 新链接会保存在此文本文档里
+
+# 自动生成sitemap
+sitemap:
+	path: sitemap.xml
+baidusitemap:
+	path: baidusitemap.xml
+ 
+#  # hexo-neat
+#  # md博文压缩
+#  neat_enable: true
+#  # 压缩html（ejs，swig等也属于html格式片段）
+#  neat_html:
+#    enable: true
+#    exclude:
+#  # 压缩css  
+#  neat_css:
+#    enable: true
+#    exclude:
+#      - '*.min.css'
+#      - '**/*.min.css'
+#      - 'jquery.fancybox.min.css'
+#      - '**/live2d-widget/waifu.css'
+#  # 压缩js
+#  neat_js:
+#    enable: true
+#    mangle: true #打印日志
+#    output:
+#    compress:
+#    exclude: #排除文件
+#      - '*.min.js'
+#      - '**/*.min.js'
+#      - 'jquery.fancybox.min.js'
+#      - '**/live2d-widget/*.js'
+#      - '**/live2d-widget/*.min.js'

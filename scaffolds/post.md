@@ -1,12 +1,12 @@
 ---
 title: {{ title }}
 date: {{ date }}
-author: hojun
-avatar: https://wx1.sinaimg.cn/large/006bYVyvgy1ftand2qurdj303c03cdfv.jpg
-authorLink: hojun.cn
+author: uncleacc
+avatar: https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3616765171,3721318254&fm=26&gp=0.jpg
+authorLink: www.fezhu.top
 authorAbout: 一个好奇的人
 authorDesc: 一个好奇的人
-categories: 技术
+categories: 算法
 comments: true
 tags: 
 keywords: 

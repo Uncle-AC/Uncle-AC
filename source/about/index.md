@@ -1,10 +1,10 @@
 ---
 title: about
-date: 2018-12-12 22:14:36
+date: 2020-03-29 22:14:36
 keywords: 关于
 description: 
 comments: false
-photos: https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/about.jpg
+photos: https://cdn.jsdelivr.net/gh/uncleacc/img@1.3/custom/0 (2).jpg
 ---
 {% raw %}
 <!-- 因为vue和botui更新导至bug,现将对话移至js下的botui中配置 -->
