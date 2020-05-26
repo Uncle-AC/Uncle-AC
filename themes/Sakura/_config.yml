@@ -21,10 +21,10 @@ menus:
     题目: {path: /categories/题目/, fa: fa-balance-scale }, 
     生活: {path: /categories/生活/, fa: fa-file-text-o }, 
     记录: {path: /categories/记录/, fa: fa-commenting-o },
-    转载: {path: /categories/转载/, fa: fa-book }
+    技术: {path: /categories/技术/, fa: fa-book },
   } }
-  清单: { path: javascript:;, fa: fa-list-ul faa-vertical, submenus: { 
-    书单: {path: /tags/悦读/, fa: fa-th-list faa-bounce }, 
+  清单: { path: /categories/, fa: fa-list-ul faa-vertical, submenus: { 
+    转载: {path: /tags/转载/, fa: fa-th-list faa-bounce }, 
     番组: {path: /bangumi/, fa: fa-film faa-vertical }, 
     歌单: {path: /music/, fa: fa-headphones },
     # 图集: {path: /tags/图集/, fa: fa-photo }

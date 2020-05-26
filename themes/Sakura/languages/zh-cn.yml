@@ -11,7 +11,7 @@ video: 视频资源
 help: 关于本站
 links: 友情链接
 photo: 图集
-book: 悦读
+transform: 转载
 music: 音乐
 cloud: 资源
 prev: <i class="iconfont icon-back"></i>
@@ -31,6 +31,7 @@ post_total_count: 嗯，目前共计%d篇文章
 read_more: '阅读全文'
 contents: 文章目录
 shuoshuo: 说说
+Log: 日志
 
 none: 无
 insight:
@@ -59,7 +60,7 @@ insight:
     zh: 记录
     en: record
     img: https://cdn.jsdelivr.net/gh/uncleacc/cdn@1.4/img/banner/record.png
-转载:
-    zh: 转载
-    en: reprint
+技术:
+    zh: 技术
+    en: Skills
     img: https://cdn.jsdelivr.net/gh/uncleacc/cdn@1.4/img/banner/reprint.jpg

@@ -18,6 +18,10 @@ links:
       img: https://cdn.jsdelivr.net/gh/uncleacc/cdn/img/custom/avatar.jpg
       name: Github
       desc: 个人仓库
+    - url: https://leancloud.cn/dashboard/applist.html#/apps
+      img: https://cdn.jsdelivr.net/gh/uncleacc/cdn/img/custom/avatar.jpg
+      name: Leancould
+      desc: 评论系统
   - group: 我的哥哥们
     desc: 跟着他们我学习了太多，接触了太多新事物
     items:
@@ -94,4 +98,8 @@ links:
       img: http://images.rshow.top/head.jpg
       name: R 喵呜的小窝
       desc: FE Node
+    - url: https://hexo.yuanjh.cn
+      img: https://hexo.yuanjh.cn/images_out/avatar.png
+      name: 闻鸡起舞
+      desc: 逝者如斯夫，不舍昼夜(IT,Java,Python,Web,量化,机器学习)
 ---

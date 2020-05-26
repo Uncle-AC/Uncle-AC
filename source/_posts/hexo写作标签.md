@@ -6,9 +6,7 @@ avatar: >-
 authorLink: www.fezhu.top
 authorAbout: 一个好奇的人
 authorDesc: 一个好奇的人
-categories: 
-  -[转载]
-  -[记录]
+categories: 技术
 comments: true
 date: 2020-05-09 19:42:26
 tags: markdown

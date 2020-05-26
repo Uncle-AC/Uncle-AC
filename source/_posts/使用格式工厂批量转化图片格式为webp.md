@@ -6,7 +6,7 @@ avatar: >-
 authorLink: www.fezhu.top
 authorAbout: 一个好奇的人
 authorDesc: 一个好奇的人
-categories: 记录
+categories: 技术
 comments: true
 date: 2020-05-12 18:21:38
 tags: hexo

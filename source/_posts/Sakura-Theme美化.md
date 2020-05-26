@@ -4,7 +4,7 @@ author: uncleacc
 avatar: 'https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3616765171,3721318254&fm=26&gp=0.jpg'
 authorLink: uncleacc.github.io
 authorAbout: 一个很菜的人
-categories: 转载
+categories: 技术
 comments: true
 date: 2020-04-10 15:52:25
 tags: 'Hexo'

@@ -186,6 +186,47 @@ int main()
 	} 
 	return 0;
 }
+双向队列超级简单，水题
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+deque<int> dq;
+int main()
+{	
+	int t;
+	cin>>t;
+	while(t--){
+		dq.clear();
+		int n; cin>>n;
+		for(int i=1;i<=n;i++){
+			int temp; cin>>temp;
+			dq.push_back(temp);
+		}
+		ll pa=0,pb=0,suma=0,sumb=0,res=1,ansa=0,ansb=0,cnt=0;
+		while(!dq.empty()){
+			cnt++;
+			suma=sumb=0;
+			if(res&1){
+				while(suma<=pb&&!dq.empty()){
+					suma+=dq.front();
+					dq.pop_front();
+				}
+				ansa+=suma; 
+				pa=suma;
+			}else{
+				while(sumb<=pa&&!dq.empty()){
+					sumb+=dq.back();
+					dq.pop_back();
+				}
+				ansb+=sumb;
+				pb=sumb;
+			}
+			res++;
+		}
+		cout<<cnt<<" "<<ansa<<" "<<ansb<<endl;
+	}
+	return 0;
+}
 ```
 ## E. Special Elements
 ### 分析
