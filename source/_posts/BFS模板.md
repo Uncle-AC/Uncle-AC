@@ -3,8 +3,8 @@ layout: post
 title: BFS模板题
 date: 2020-04-04 22:54:10
 avatar: 'https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3616765171,3721318254&fm=26&gp=0.jpg'
-authorLink: uncleacc.github.io
-tags: [模板,算法]
+authorLink:
+tags: 搜索
 categories: 算法
 keywords:
 photos: https://cdn.jsdelivr.net/gh/uncleacc/Img/textbg/20.webp
