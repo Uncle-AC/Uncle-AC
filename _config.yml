@@ -90,7 +90,7 @@ backup:
     type: git
     repository:
       github: git@github.com:uncleacc/uncleacc.github.io.git
-    branch: master
+    branch: backup
       #  gitcafe: git@github.com:xxx/xxx.git,branchName
 feed:
   type: atom
