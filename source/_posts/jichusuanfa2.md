@@ -39,7 +39,7 @@ ll qpow(ll a,ll b){
 }
 ```
 <font color="red">
-看着这两段代码没啥区别，就是把ans=ans*ans改成了ans*=ans，如果没有取模的话这俩没有任何区别，但是一旦取模就是AC和wrong的天壤之别，为什么？因为爆ll！首先看ans*=ans%MOD这一段首先计算ans%MOD，这是小于MOD的一个数，但是也有可能就比MOD小1，就把ans当作是MOD-1，然后再乘以ans，哇，(MOD-1)*(MOD-1)这是一个比MOD大几十倍的数，本来目的是最后算出一个小于MOD的数的！结果呵呵，这就是我的习惯了，我习惯把a=a*a写成a*=a，最后debug时真的直接就忽略了这个🙃
+看着这两段代码没啥区别，就是把ans=ans*ans改成了ans*=ans，如果没有取模的话这俩没有任何区别，但是一旦取模就是AC和wrong的天壤之别，为什么？首先看ans*=ans%MOD这一段首先计算ans%MOD，我们要保证的是ans计算完必须要比MOD小，因为取余嘛！但是这一段代码先算ans%MOD的话，可能算出来的数跟MOD相差无几，再乘以ans的话就大于MOD了，直接升天，最后debug时真的直接就忽略了这个🙃
 </font>
 
 ## Pseudoprime numbers
@@ -328,8 +328,56 @@ while(n){
 }
 ```
 ### CODE
-```
+```c
+#include <stdio.h>
+#include <iostream>
+#include <string>
+#include <string.h>
+#include <map>
+#include <queue>
+#include <stack>
+#include <algorithm>
+#include <vector>
+#include <set>
+#define PI acos(-1)
+#define ios ios::sync_with_stdio(0); cin.tie(0); cout.tie(0)
+#define debug freopen("in.txt","r",stdin); freopen("out.txt","w",stdout)
+using namespace std;
+typedef long long ll;
+const int MAXN = 1e5;
+const int MOD = 1e9;
+int check(int mid){
+	int num=0;
+	while(mid){
+		num+=mid/5;
+		mid/=5;
+	}
+	return num;
+}
+int main()
+{
 
+    int t,kase=0;
+	cin>>t;
+	while(t--){
+		int q;
+		cin>>q;
+		int l,r,mid,ans=0;
+		l=5; r=5e8+10;
+		while(r>=l){
+			mid=(l+r)>>1;
+			if(check(mid)>=q){
+				r=mid-1;
+				ans=mid;
+			} 
+			else l=mid+1;
+		} 
+		cout<<"Case "<<++kase<<": ";
+		if(check(ans)==q) cout<<ans<<'\n';
+		else cout<<"impossible"<<'\n';
+	} 
+	return 0;
+} 
 ```
 ## Pie
 **题意**  

@@ -14,6 +14,10 @@ links:
       img: https://cdn.jsdelivr.net/gh/uncleacc/cdn/img/custom/avatar.jpg
       name: 我的图床
       desc: 图片仓库
+	  - url: https://www.uncleacc.top
+      img: https://cdn.jsdelivr.net/gh/uncleacc/cdn/img/custom/avatar.jpg
+      name: 本站
+      desc: 服务器的本站
     - url: https://github.com/uncleacc
       img: https://cdn.jsdelivr.net/gh/uncleacc/cdn/img/custom/avatar.jpg
       name: Github
@@ -79,7 +83,7 @@ links:
       name: 小康博客
       desc: 一个收藏回忆与分享技术的地方！
     - url: https://zzsnn.github.io/
-      img: https://zzsnn.github.io/img/avatar.png
+      img: https://cdn.jsdelivr.net/gh/Thefine/thefine.github.io/img/avatar.jpg
       name: 折纸少年
       desc: 活着不一定要鲜:但一定要有自己的颜色
     - url: https://www.hongmaple.xyz/
@@ -90,14 +94,6 @@ links:
       img: https://cdn.jsdelivr.net/gh/wallleap/cdn@2.4/img/custom/avatar.jpg
       name: wallleap
       desc:  今日事,今日畢
-    - url: https://enfangzhong.github.io/
-      img: 
-      name: AnFrank
-      desc:  Stay Hungry Stay Foolish
-    - url: http://rshow.top/
-      img: http://images.rshow.top/head.jpg
-      name: R 喵呜的小窝
-      desc: FE Node
     - url: https://hexo.yuanjh.cn
       img: https://hexo.yuanjh.cn/images_out/avatar.png
       name: 闻鸡起舞

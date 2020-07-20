@@ -27,6 +27,7 @@ menus:
     转载: {path: /tags/转载/, fa: fa-th-list faa-bounce }, 
     番组: {path: /bangumi/, fa: fa-film faa-vertical }, 
     歌单: {path: /music/, fa: fa-headphones },
+    统计: {path: /analytics/ , fa: fa-line-chart },
     # 图集: {path: /tags/图集/, fa: fa-photo }
   } }
   说说: {path: /shuoshuo/, fa: fa-commenting-o fa-commenting }

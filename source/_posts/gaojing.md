@@ -17,22 +17,24 @@ photos: https://cdn.jsdelivr.net/gh/uncleacc/Img/textbg/4.webp
 
 ## 加法
 
-    string add(string a,string b){
-        if(a.size() > b.size()) swap(a,b);
-        b.insert(b.begin(),'0');
-        int t = 0;
-        for(int i = b.size()-1,j = a.size()-1;i>=0;i--,j--){
-            int cur;
-            if(j>=0) cur = (a[j]-'0') + (b[i]-'0') + t;
-            else cur = (b[i] - '0') +t;
-            b[i] = (cur%10) + '0';
-            t = cur/10;
-        }
-        int idx = b.find_first_not_of('0');
-        return idx != -1? b.substr(idx): "0";
+```c
+string add(string a,string b){
+    if(a.size() > b.size()) swap(a,b);
+    b.insert(b.begin(),'0');
+    int t = 0;
+    for(int i = b.size()-1,j = a.size()-1;i>=0;i--,j--){
+        int cur;
+        if(j>=0) cur = (a[j]-'0') + (b[i]-'0') + t;
+        else cur = (b[i] - '0') +t;
+        b[i] = (cur%10) + '0';
+        t = cur/10;
     }
-## 减法
+    int idx = b.find_first_not_of('0');
+    return idx != -1? b.substr(idx): "0";
+}
 ```
+## 减法
+```c
 string sub(string a,string b){
     //a大b小
     int t = 0;
@@ -84,7 +86,7 @@ string sub(string a,string b){
       return 0;
     }
 ## 乘法（高精度乘低精度）
-```
+```c
 string mul(string a,ll b){
     string c = "";
     ll t = 0;
@@ -97,8 +99,48 @@ string mul(string a,ll b){
     return c;
 }
 ```
-## 除法（高精度除低精度）
+
+## 大数乘大数(高精度乘高精度)
+
+```c
+int a[10000],b[10000],ans[10000];//注意全局变量 
+string x,y;
+int len1,len2,pos;
+void change(string x,string y){//接受字符串更换成int数组 
+	len1=x.size(),len2=y.size();
+	for(int i=1;i<=len1;i++) a[i]=x[len1-i]-'0';
+	for(int i=1;i<=len2;i++) b[i]=y[len2-i]-'0';
+} 
+int *hpre(int a[],int b[]){ //接受int数组结果储存于ans数组 
+	if((len1==1&&a[1]==0)||(len2==1&&b[1]==0)){
+		ans[++pos]=0;
+		return ans;
+	}
+	int jin=0;
+	//注意低位在前 
+	for(int i=1;i<=len1;i++){
+		for(int j=1;j<=len2;j++){
+			pos=j+i-1;
+			int x=a[i]*b[j]+ans[pos];
+			jin=x/10;
+			if(jin) ans[pos+1]+=jin;
+			ans[pos]=x%10;
+		}
+	}
+	return ans;
+}
+void print(int ans[]){//输出ans数组 
+	if(ans[pos+1]!=0) cout<<ans[pos];
+	for(int i=pos;i>=1;i--){
+		cout<<ans[i];
+	}
+}
 ```
+
+
+
+## 除法（高精度除低精度）
+```c
 string div(string a,ll b){
     string c = "";
     ll cur = 0;
@@ -111,8 +153,26 @@ string div(string a,ll b){
     return idx!=-1 ? c.substr(idx) : "0";
 }
 ```
-## 比较大小
+## 大数取模
+
+```c
+int mod(char str[],int c)
+{
+    int number[100];
+    for(int i=0;i<strlen(str);i++)
+    	number[i]=str[i]-'0';
+    int sum=0;
+    for(int i=0;i<strlen(str);i++)//大数取模就是按照每一位取模,不断重复
+    {
+        sum=((long long)sum*10+number[i])%c;
+    }
+    return sum;
+}
 ```
+
+## 比较大小
+
+```c
 bool cmp(string a,string b){
     int idx1 = a.find_first_not_of('0'),idx2 = b.find_first_not_of('0');
     a = idx1!=-1? a.substr(idx1) : "0";
