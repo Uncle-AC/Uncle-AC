@@ -135,3 +135,73 @@ int main()
  } 
 ```
 
+## 倍增找LCA
+
+ 详细讲解：
+
+[视频](https://www.bilibili.com/video/BV155411h7CG?p=2)
+
+[LCA博客讲解](https://www.cnblogs.com/darlingroot/p/10597611.html)
+
+## [P3379 【模板】最近公共祖先（LCA）](https://www.luogu.com.cn/problem/P3379)
+
+```c
+#include <bits/stdc++.h>
+using namespace std;
+const int MAXN=500010;
+vector<int> ve[MAXN];
+int dep[MAXN],f[MAXN][22];
+void dfs(int u, int fa, int d){  //找到每一个节点的父亲节点以及深度大小
+	f[u][0]=fa;  //每一个节点往上走2^0步就是父亲节点
+	dep[u]=d;  //深度
+	int sz=ve[u].size();  //遍历后继节点
+	for(int i=0;i<sz;i++){
+		int v=ve[u][i];  
+		if(v==fa) continue;  //记住不能往回走
+		dfs(v, u, d+1);
+	}
+}
+void bz(int n){  //预处理出每一个节点往上2^i步后到达的节点
+	for(int i=1;i<22;i++){  //2^22 > 4e7，能处理最大深度不超过4e7的树
+		for(int u=1;u<=n;u++){
+			f[u][i]=f[f[u][i-1]][i-1];  //当前节点向上走2^i步就等于先向上走2^(i-1)再向上走2^(i-1)步
+		}
+	}
+}
+int lca(int x,int y){
+	if(dep[x]<dep[y]) swap(x,y);  //保证x的深度大于y
+	for(int i=log2(dep[x]-dep[y]);i>=0;i--){
+		if((1<<i)<=dep[x]-dep[y]) x=f[x][i]; //注意dep[x]-dep[y]时刻在变化，也正是因为这个所以dep[x]一定最后和dep[y] 
+	}
+	if(x==y) return x;
+	for(int i=log2(dep[x]);i>=0;i--){  //此时两个节点的深度相同，就需要一起往上面走
+		if(f[x][i]!=f[y][i]){  //一起走2^i后不能相同，因为相同了可能导致超过（最近）公共祖先！
+			x=f[x][i];
+			y=f[y][i];
+		}
+	}
+    //走完后一定到达了最近公共祖先的子节点，因为这种方法本质上就是二分
+	return f[x][0]; //父节点就是lca
+}
+int main()
+{
+	ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+	int n,m,s;
+	cin>>n>>m>>s;
+	for(int i=0;i<n-1;i++){
+		int a,b;
+		cin>>a>>b;
+		ve[a].push_back(b);
+		ve[b].push_back(a);
+	}
+	dfs(s,0,0);  //这里很巧妙哦，假设还有一个0节点，而0是s的父亲节点，这样每一个节点往上走2^i就算走过了根节点也会是0
+	bz(n);  //预处理
+	while(m--){
+		int x,y;
+		cin>>x>>y;
+		cout<<lca(x,y)<<'\n';
+	}
+	return 0;
+}
+```
+

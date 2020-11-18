@@ -11,19 +11,19 @@ links:
     desc: 我的仓库
     items: 
     - url: https://cdn.jsdelivr.net/gh/uncleacc/Img/
-      img: https://cdn.jsdelivr.net/gh/uncleacc/cdn/img/custom/avatar.jpg
+      img: https://cdn.jsdelivr.net/gh/uncleacc/cdn/img/custom/avatar.png
       name: 我的图床
       desc: 图片仓库
 	  - url: https://www.uncleacc.top
-      img: https://cdn.jsdelivr.net/gh/uncleacc/cdn/img/custom/avatar.jpg
+      img: https://cdn.jsdelivr.net/gh/uncleacc/cdn/img/custom/avatar.png
       name: 本站
       desc: 服务器的本站
     - url: https://github.com/uncleacc
-      img: https://cdn.jsdelivr.net/gh/uncleacc/cdn/img/custom/avatar.jpg
+      img: https://cdn.jsdelivr.net/gh/uncleacc/cdn/img/custom/avatar.png
       name: Github
       desc: 个人仓库
     - url: https://leancloud.cn/dashboard/applist.html#/apps
-      img: https://cdn.jsdelivr.net/gh/uncleacc/cdn/img/custom/avatar.jpg
+      img: https://cdn.jsdelivr.net/gh/uncleacc/cdn/img/custom/avatar.png
       name: Leancould
       desc: 评论系统
   - group: 我的哥哥们
